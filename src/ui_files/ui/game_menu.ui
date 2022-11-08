@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1210</width>
+    <height>794</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Слепопечать v0.1</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="7">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,7,1">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="keyboard_hide_button">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#keyboard_hide_button {
+    background-color: transparent;
+    border-image: url(:/icons/images/keyboard_on.png);
+    background: none;
+    border: none;
+    background-repeat: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignLeft">
+        <widget class="QPushButton" name="hands_hide_button">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#hands_hide_button {
+    background-color: transparent;
+    border-image: url(:/icons/images/hands_on.png);
+    background: none;
+    border: none;
+    background-repeat: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="central_layout" stretch="0,2,1,2,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="timer_label">
+         <property name="maximumSize">
+          <size>
+           <width>1000</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>30</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="DisplayText" name="displayed_text">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>35</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progress_bar">
+         <property name="maximumSize">
+          <size>
+           <width>1530</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,3,1">
+         <item>
+          <widget class="QLabel" name="left_hand_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>250</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#left_hand_label {
+    background-color: transparent;
+    border-image:url(:/images/images/left_hand.png);
+    background: none;
+    border: none;
+    background-repeat: none;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="keyboard_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1620</width>
+             <height>550</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#keyboard_label {
+    background-color: transparent;
+    border-image:url(:/images/images/keyboard.png);
+    background: none;
+    border: none;
+    background-repeat: none;
+    opacity: 0;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="right_hand_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>250</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#right_hand_label {
+    background-color: transparent;
+    border-image: url(:/images/images/right_hand.png);
+    background: none;
+    border: none;
+    background-repeat: none;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="TypingFilter" name="input_text_line">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1500</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>35</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#input_text_line {
+
+}</string>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="placeholderText">
+          <string>Печатать сюда</string>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item alignment="Qt::AlignRight">
+        <widget class="QPushButton" name="game_quit_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#game_quit_button {
+background-color: transparent;
+border-image: url(:/icons/images/widget_quit.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#game_quit_button:pressed
+{
+   border-image: url(:/icons/images/widget_quit_clicked.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="shortcut">
+          <string>Esc</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TypingFilter</class>
+   <extends>QLineEdit</extends>
+   <header>src.widgets.TypingFilterWidget</header>
+  </customwidget>
+  <customwidget>
+   <class>DisplayText</class>
+   <extends>QLineEdit</extends>
+   <header>src.widgets.DisplayTextWidget</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../qrc_files/pictures.qrc"/>
+ </resources>
+ <connections/>
+</ui>

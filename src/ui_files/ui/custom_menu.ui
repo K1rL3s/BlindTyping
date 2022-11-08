@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>custom_menu</class>
+ <widget class="QWidget" name="custom_menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Кастомные уровни</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,7,1">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,2,0">
+     <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+      <widget class="QLabel" name="custom_logo">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>650</width>
+         <height>325</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#custom_logo {
+background-color: transparent;
+border-image:url(:/images/images/custom_logo.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="buttons_layout"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="add_level_button">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>30</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#add_level_button {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 30pt;
+}
+
+#add_level_button:pressed {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 28pt;
+}</string>
+         </property>
+         <property name="text">
+          <string>Добавить</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="update_level_button">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>30</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#update_level_button {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 30pt;
+}
+
+#update_level_button:pressed {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 28pt;
+}</string>
+         </property>
+         <property name="text">
+          <string>Изменить</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="delete_level_button">
+         <property name="font">
+          <font>
+           <family>Comic Sans MS</family>
+           <pointsize>30</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#delete_level_button {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 30pt;
+}
+
+#delete_level_button:pressed {
+    background: transparent;
+    font: &quot;Comic Sans MS&quot;;
+    font-size: 28pt;
+}</string>
+         </property>
+         <property name="text">
+          <string>Удалить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <item alignment="Qt::AlignRight">
+      <widget class="QPushButton" name="custom_quit_button">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#custom_quit_button {
+background-color: transparent;
+border-image: url(:/icons/images/widget_quit.png);
+background: none;
+border: none;
+background-repeat: none;
+}
+#custom_quit_button:pressed
+{
+   border-image: url(:/icons/images/widget_quit_clicked.png);
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="shortcut">
+        <string>Esc</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../qrc_files/pictures.qrc"/>
+ </resources>
+ <connections/>
+</ui>
