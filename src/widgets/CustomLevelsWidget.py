@@ -8,7 +8,7 @@ from src.widgets.InfoConfirmWidget import InfoConfirm
 from src.ui_files import Custom_UI
 from ..consts import (LEVEL_BUTTON_FONT, OOPS, CANNOT_DELETE_LEVEL, DELETING_LEVEL_TITLE, DELETING_LEVEL_CONTENT,
                       LEVEL_DELETED_SUCCESSFULY_TITLE, LEVEL_DELETED_SUCCESSFULY_CONTENT, CUSTOMS_LEVEL_IN_ROW)
-from ..main_funcs import Database
+from ..database import Database
 
 
 # Меню с кнопками кастомных уровней

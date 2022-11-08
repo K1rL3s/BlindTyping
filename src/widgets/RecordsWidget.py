@@ -5,7 +5,7 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QTableWidget, QTableWidgetItem, QPushButton, QHeaderView, QLabel
 
 from src.ui_files import Record_UI
-from ..main_funcs import Database
+from ..database import Database
 from ..consts import PLACES, RECORDS_FOUND, RECORDS_NOT_FOUND, RECORDS_WIDGET_COLUMNS, RECORD_RESULT
 
 

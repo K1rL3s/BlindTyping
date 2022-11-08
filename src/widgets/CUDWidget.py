@@ -4,7 +4,7 @@ from PyQt5 import uic
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QPlainTextEdit
 
-from src.main_funcs import Database
+from src.database import Database
 from src.widgets.InfoConfirmWidget import InfoConfirm
 from src.ui_files import CUD_UI
 from ..consts import (Actions, NAMEING_LENGHT_LIMIT, LEVEL_ADDED_SUCCESSFULY_TITLE, LEVEL_ADDED_SUCCESSFULY_CONTENT,
