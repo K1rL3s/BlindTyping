@@ -4,6 +4,14 @@ from src.consts import ModeNames
 
 
 class Database:
+    """
+    Класс базы данных.
+
+    Умеет:
+    1. Инициировать необходимые для работы таблицы.
+    2. Добавлять и возвращать рекорды;
+    3. Добавлять, изменять, удалять и возвращать кастомные уровни.
+    """
     def __init__(self, database_name: str = 'records.db'):
         self.db = sqlite3.connect(database_name, check_same_thread=False)
         self.cursor = self.db.cursor()

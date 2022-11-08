@@ -15,6 +15,13 @@ from ..consts import (Actions, NAMEING_LENGHT_LIMIT, LEVEL_ADDED_SUCCESSFULY_TIT
 # при добавлении/изменении кастомного уровня обновление self.levels (main.py) и кнопок в CustomMenu
 # функционал = изменение/добавление кастомных уровней сразу в бд и выброс сигнала
 class CreateUpdateDeleteMenu(QWidget, CUD_UI):
+    """
+    Меню добавления и изменения уровней.
+
+    Открывается без данных для создания нового.
+    Открывается с данными при редактировании текущего выбранного.
+    Сам делает вызов класса базы данных для сохранения и изменения уровней.
+    """
     cud_title_line: QLineEdit
     cud_content_plain: QPlainTextEdit
     cud_confirm_button: QPushButton

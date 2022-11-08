@@ -11,17 +11,22 @@ from ..consts import (LEVEL_BUTTON_FONT, OOPS, CANNOT_DELETE_LEVEL, DELETING_LEV
 from ..database import Database
 
 
-# Меню с кнопками кастомных уровней
-# Обновление и удаление уровня по выбраному текущему (искл. - встроенные)
 # Сигнал от кнопок изменений передаётся в мэйн и оттуда уже cudmenu
 class CustomMenu(QWidget, Custom_UI):
+    """
+    Меню кастомных уровней.
+
+    Имеет кнопки с названиями уровней для выбора кастомного уровня.
+    Имеет переход в CUD Меню для удаления или редактирования выбранного кастомного уровня.
+    Сигнал от кнопок передаётся в main.py и оттуда уже в CUDWidget и PreGameWidget.
+    Сам делает вызов класса базы данных для удаления уровней.
+    """
     add_level_button: QPushButton
     update_level_button: QPushButton
     delete_level_button: QPushButton
     custom_quit_button: QPushButton
     buttons_layout: QVBoxLayout
     quit = pyqtSignal()
-    open_cud = pyqtSignal()
     add_level = pyqtSignal()
     update_level = pyqtSignal()
     delete_level = pyqtSignal(str)

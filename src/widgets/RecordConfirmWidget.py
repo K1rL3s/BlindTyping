@@ -4,8 +4,12 @@ from PyQt5.QtWidgets import QWidget, QPushButton, QLabel, QVBoxLayout, QHBoxLayo
 from ..consts import CONFIRM_INFO_FONT, RECORD_CONFIRM_TITLE, RECORD_CONFIRM_CONTENT
 
 
-# Просто красивое подтверждение результата после игры
 class RecordConfirm(QWidget):
+    """
+    Виджет подтверждения результата
+
+    Просто красивое подтверждение результата после игры вместо QDialog'а.
+    """
     record_confirm = pyqtSignal(int)
 
     def __init__(self, user_width: int, user_height: int):

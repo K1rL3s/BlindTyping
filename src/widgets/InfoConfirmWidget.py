@@ -3,9 +3,13 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButt
 from ..consts import CONFIRM_INFO_FONT
 
 
-# Самый переиспользуемый класс из всех представленных.
-# Моя гордость.
 class InfoConfirm(QWidget):
+    """
+    Виджет подтверждения информации.
+
+    Самый переиспользуемый класс из всех представленных, моя гордость.
+    Нужен лишь для нажатия "OK".
+    """
     def __init__(self, window_title: str, label_text: str, user_width: int, user_height: int):
         super().__init__()
         self.init_ui(window_title, label_text, user_width, user_height)

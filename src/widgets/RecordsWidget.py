@@ -11,6 +11,13 @@ from ..consts import PLACES, RECORDS_FOUND, RECORDS_NOT_FOUND, RECORDS_WIDGET_CO
 
 # Меню с отображением рекордов
 class RecordsMenu(QWidget, Record_UI):
+    """
+    Меню рекордов.
+
+    Имеет 4 таблицы по категориям результатов.
+    Получает информацию от класса базы данных, там же и сортируются результаты по возрастанию.
+    Красит топ-3 результаты в соответствующие цвета.
+    """
     record_quit_button: QPushButton
     record_words_button: QPushButton
     record_nums_button: QPushButton

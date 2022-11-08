@@ -14,6 +14,16 @@ from ..consts import HANDS_STYLE_SHEETS, KEYBOARD_STYLE_SHEETS, TIME_INTERVAL, G
 
 
 class GameMenu(QWidget, Game_UI):
+    """
+    Игровое меню
+
+    Здесь происходит вся магия.
+    После запуска игры начинается GAME_DELAY задержка перед началом печати,
+    дальше поле ввода текста активируется и таймер идёт вверх.
+    Имеются две кнопки для переключения отображения изображения клавиатуры и рук.
+    Результат можно сохранить только после полного прохождения уровня,
+    в случае преждевременного выхода рекорд не сохраняется.
+    """
     progress_bar: QProgressBar
     displayed_text: DisplayText
     input_text_line: TypingFilter

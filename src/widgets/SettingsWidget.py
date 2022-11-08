@@ -6,11 +6,15 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QWidget, QPushButton, QInputDialog
 
 from src.ui_files import Settings_UI
-from ..consts import CHANGE_NAME_TITLE, CHANGE_NAME_CONTENT
+from ..consts import CHANGE_NAME_TITLE, CHANGE_NAME_CONTENT, BACKGROUND_NUMBERS
 
 
-# Меню с сменой имени и фона
 class SettingsMenu(QWidget, Settings_UI):
+    """
+    Меню настроек
+
+    Позволяет сменить имя пользователя или фон игры.
+    """
     settings_quit_button: QPushButton
     changename_button: QPushButton
     changebackground_button: QPushButton
@@ -20,7 +24,7 @@ class SettingsMenu(QWidget, Settings_UI):
 
     def __init__(self, ui_path: Path):
         super().__init__()
-        self.background_num = randint(1, 3)
+        self.background_num = randint(1, BACKGROUND_NUMBERS)
         self.init_ui(ui_path)
 
     def init_ui(self, ui_path: Path):
@@ -39,5 +43,5 @@ class SettingsMenu(QWidget, Settings_UI):
             self.name_changed.emit(username)
 
     def change_background(self):
-        self.background_num = self.background_num % 3 + 1
+        self.background_num = self.background_num % BACKGROUND_NUMBERS + 1
         self.background_changed.emit(self.background_num)

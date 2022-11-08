@@ -17,6 +17,7 @@ KEYBOARD_STYLE_SHEETS = ('#keyboard_hide_button {',
                          'border: none;',
                          'background-repeat: none;}')
 CONFIRM_INFO_FONT = QFont("Comic Sans MS", 25)
+BACKGROUND_NUMBERS = 3
 TIME_INTERVAL = 75
 PREGAME_DELAY = 5000
 MINIMUM_TEXT_LENGTH = 250  # for random russian or english words, not for custom levels

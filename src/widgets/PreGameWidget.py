@@ -11,6 +11,12 @@ from ..consts import (RU_LEVELS, ENG_LEVELS, PUNCT_LEVELS, RANDOM_WORDS, LEVEL_B
 
 # Меню с выбором уровней
 class PreGameMenu(QWidget, PreGame_UI):
+    """
+    Меню выбора уровня
+
+    Выбор встроенных уровней, переход в меню кастомных уровней и запуск игры.
+    Язык нужен лишь для отображения в label'е.
+    """
     pregame_quit_button: QPushButton
     startgame_button: QPushButton
     buttons_layout: QVBoxLayout

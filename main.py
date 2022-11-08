@@ -158,6 +158,7 @@ class MainWindow(QMainWindow):
         for key, value in self.database.get_custom_levels():
             self.custom_levels[key] = value
 
+    # Получение уровня текста из сети или словарей
     def get_level_text(self):
         text = ''
         if self.level == consts.Languages.RUSSIAN.value:
@@ -172,6 +173,7 @@ class MainWindow(QMainWindow):
             text = self.custom_levels.get(self.level)
         return text
 
+    # Сохранение уровня в базе данных
     def new_record(self, symbs_per_min: int):
         if self.level in russian_levels or self.level in english_levels:
             mode_name = consts.ModeNames.LETTERS.value

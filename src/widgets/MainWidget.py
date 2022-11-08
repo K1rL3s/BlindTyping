@@ -7,8 +7,12 @@ from PyQt5.QtWidgets import QWidget, QPushButton
 from src.ui_files import Main_UI
 
 
-# Стартовая менюшка. Просто кнопочки и сигнальчики
 class MainMenu(QWidget, Main_UI):
+    """
+    Стартово меню
+
+    Просто кнопочки других менюшек и сигналы от их нажатия.
+    """
     startgame_button: QPushButton
     settings_button: QPushButton
     record_button: QPushButton
