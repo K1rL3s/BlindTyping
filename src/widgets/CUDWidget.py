@@ -7,9 +7,10 @@ from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QPlainTextEdit
 from src.database import Database
 from src.widgets.InfoConfirmWidget import InfoConfirm
 from src.ui_files import CUD_UI
+from src.main_funcs import normalize_text
 from ..consts import (Actions, NAMEING_LENGHT_LIMIT, LEVEL_ADDED_SUCCESSFULY_TITLE, LEVEL_ADDED_SUCCESSFULY_CONTENT,
                       OOPS, LEVEL_UPDATED_SUCCESSFULY_TITLE, LEVEL_UPDATED_SUCCESSFULY_CONTENT, LEVEL_NOT_FOUND,
-                      LEVEL_NAME_ALREADY_TAKEN, BAD_SYMBOLS)
+                      LEVEL_NAME_ALREADY_TAKEN)
 
 
 # при добавлении/изменении кастомного уровня обновление self.levels (main.py) и кнопок в CustomMenu
@@ -50,13 +51,6 @@ class CreateUpdateDeleteMenu(QWidget, CUD_UI):
         self.cud_title_line.setText(title)
         self.cud_content_plain.setPlainText(content)
 
-    @staticmethod
-    def format_text(text: str) -> str:
-        for bad_symbol in BAD_SYMBOLS:
-            while bad_symbol in text:
-                text = text.replace(bad_symbol, ' ')
-        return text
-
     def set_action(self, action: str, level_title: str = None):
         self.current_action = action
         if action == Actions.ADD.value:
@@ -83,8 +77,8 @@ class CreateUpdateDeleteMenu(QWidget, CUD_UI):
         self.confirm_window = InfoConfirm(window_title, window_text, self.user_width, self.user_height)
 
     def add_level(self):
-        title = self.cud_title_line.text()[:NAMEING_LENGHT_LIMIT]
-        content = self.format_text(self.cud_content_plain.toPlainText())
+        title = normalize_text(self.cud_title_line.text())[:NAMEING_LENGHT_LIMIT]
+        content = normalize_text(self.cud_content_plain.toPlainText())
         if not content or not title:
             return
         if self.database.add_custom_level(title, content):

@@ -17,3 +17,7 @@ def get_english_words(number: int, length: int = None) -> tuple[str]:
 
 def get_russian_words(number: int) -> tuple[str]:
     return tuple(choices(russian_words, k=number))
+
+
+def normalize_text(string: str) -> str:
+    return ' '.join(string.strip().split())

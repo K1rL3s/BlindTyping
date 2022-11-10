@@ -26,12 +26,11 @@ RANDOM_WORDS = ('русские', 'инглиш')
 PUNCT_LEVELS = ('основные', 'числа', 'другие')
 RU_LEVELS = ('ва ол', 'фы дж', 'ми ть', 'еп нр', 'ук гш', 'чс бю', 'йц щц', 'я эхъ')
 ENG_LEVELS = ('df jl', 'as l;', 'vb nm', 'tg yh', 'er ui', 'qw op', 'xc ,.', 'z!?/')
-BAD_SYMBOLS = ('\n', '	', '  ')  # newline, tab-char and double space
 PLACES = (QColor(224, 214, 0), QColor(180, 181, 189), QColor(155, 82, 33))
 DISPLAY_TEXT_LENGHT = 25
 NAMEING_LENGHT_LIMIT = 16
 GAME_DELAY = 5
-CUSTOMS_LEVEL_IN_ROW = 5
+CUSTOMS_LEVELS_IN_ROW = 5
 CUSTOM_BUTTON = 'кастомные уровни'
 
 

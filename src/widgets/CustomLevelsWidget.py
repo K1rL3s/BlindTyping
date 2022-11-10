@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QMes
 from src.widgets.InfoConfirmWidget import InfoConfirm
 from src.ui_files import Custom_UI
 from ..consts import (LEVEL_BUTTON_FONT, OOPS, CANNOT_DELETE_LEVEL, DELETING_LEVEL_TITLE, DELETING_LEVEL_CONTENT,
-                      LEVEL_DELETED_SUCCESSFULY_TITLE, LEVEL_DELETED_SUCCESSFULY_CONTENT, CUSTOMS_LEVEL_IN_ROW)
+                      LEVEL_DELETED_SUCCESSFULY_TITLE, LEVEL_DELETED_SUCCESSFULY_CONTENT, CUSTOMS_LEVELS_IN_ROW)
 from ..database import Database
 
 
@@ -67,8 +67,8 @@ class CustomMenu(QWidget, Custom_UI):
     def upload_buttons(self):
         self.clear_buttons()
         titles = [i[0] for i in self.database.get_custom_levels()]
-        for row in range(0, len(titles), CUSTOMS_LEVEL_IN_ROW):
-            row_titles = titles[row:row + CUSTOMS_LEVEL_IN_ROW]
+        for row in range(0, len(titles), CUSTOMS_LEVELS_IN_ROW):
+            row_titles = titles[row:row + CUSTOMS_LEVELS_IN_ROW]
             layout = QHBoxLayout()
             layout.setAlignment(Qt.AlignCenter)
             for title in row_titles:

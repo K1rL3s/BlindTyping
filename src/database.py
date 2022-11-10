@@ -1,6 +1,7 @@
 import sqlite3
 
 from src.consts import ModeNames
+from src.main_funcs import normalize_text
 
 
 class Database:
@@ -32,7 +33,7 @@ class Database:
 
     def add_new_record(self, name: str, record: int, mode_name: str):
         self.cursor.execute(f"INSERT INTO records VALUES (?, ?, (SELECT id FROM modes WHERE title = ?))",
-                            (name, record, mode_name))
+                            (normalize_text(name), record, mode_name))
         self.db.commit()
 
     def get_records(self, mode_name: str) -> list[tuple[str, int]]:
@@ -52,7 +53,8 @@ class Database:
     def add_custom_level(self, title: str, content: str):
         if self.cursor.execute("SELECT * FROM custom_levels WHERE title = ?", (title,)).fetchall():
             return False
-        self.cursor.execute("INSERT INTO custom_levels (title, content) VALUES (?, ?)", (title, content))
+        self.cursor.execute("INSERT INTO custom_levels (title, content) VALUES (?, ?)",
+                            (normalize_text(title), normalize_text(content)))
         self.db.commit()
         return True
 
@@ -64,7 +66,8 @@ class Database:
         level = self.get_custom_level(title)
         if level and level[0] != level_id:
             return False
-        self.cursor.execute("UPDATE custom_levels SET title = ?, content = ? WHERE id = ?", (title, content, level_id))
+        self.cursor.execute("UPDATE custom_levels SET title = ?, content = ? WHERE id = ?",
+                            (normalize_text(title), normalize_text(content), level_id))
         self.db.commit()
         return True
 
@@ -87,8 +90,8 @@ MODES_TABLE = """
               )"""
 RECORDS_TABLE = """
                 CREATE TABLE IF NOT EXISTS "records" (
-                    "name"	TEXT NOT NULL,
-                    "result"	INTEGER NOT NULL,
-                    "mode_id"	INTEGER NOT NULL,
+                    "name" TEXT NOT NULL,
+                    "result" INTEGER NOT NULL,
+                    "mode_id" INTEGER NOT NULL,
                     FOREIGN KEY("mode_id") REFERENCES "modes"("id")
                 )"""
