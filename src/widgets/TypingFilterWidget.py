@@ -1,5 +1,7 @@
+from PyQt5.Qt import QKeySequence
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtGui import QKeyEvent
 
 from ..consts import DISPLAY_TEXT_LENGHT
 
@@ -53,3 +55,11 @@ class TypingFilter(QLineEdit):
 
         if text == self.level_text:
             self.game_ended.emit()
+
+    # Обработка ctrl+v
+    def keyPressEvent(self, event: QKeyEvent):
+        if event.key() == QKeySequence.Paste:
+            event.ignore()
+        else:
+            self.setText(self.text() + event.text())
+

@@ -90,7 +90,7 @@ class CreateUpdateDeleteMenu(QWidget, CUD_UI):
 
     def update_level(self):
         title = self.cud_title_line.text()[:NAMEING_LENGHT_LIMIT]
-        content = self.format_text(self.cud_content_plain.toPlainText())
+        content = normalize_text(self.cud_content_plain.toPlainText())
         if not content or not title:
             return
         if self.database.update_custom_level(self.level_id, title, content):
