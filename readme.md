@@ -26,6 +26,12 @@
 Установить python версии **3.10**+
 (Тестировалось на версии **3.10.5**)
 
+Склонировать репозиторий и перейти в него:
+```commandline
+git clone https://github.com/K1rL3s/BlindTyping.git
+cd ./BlindTyping
+```
+
 Установить все библиотеки, перечисленные в `requiremenets.txt` файле с
 помощью (`python -m pip install -r ./requirements` или `pip install -r requirements.txt`)
 
